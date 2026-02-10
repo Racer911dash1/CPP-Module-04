@@ -2,6 +2,7 @@
 # define DOG_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal
 {
@@ -13,6 +14,12 @@ class Dog : public Animal
 		~Dog();
 
 		void makeSound() const override;
+
+		const Brain& getBrain() const;
+		Brain& getBrain();
+
+	private:
+		Brain* brain_ {nullptr};
 };
 
 #endif /* DOG_HPP */
